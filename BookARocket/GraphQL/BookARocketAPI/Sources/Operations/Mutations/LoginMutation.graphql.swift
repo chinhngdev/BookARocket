@@ -18,11 +18,11 @@ public class LoginMutation: GraphQLMutation {
 
   public var __variables: Variables? { ["email": email] }
 
-  public struct Data: BookARocket.SelectionSet {
+  public struct Data: BookARocketAPI.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { BookARocket.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { BookARocketAPI.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("login", Login?.self, arguments: ["email": .variable("email")]),
     ] }
@@ -32,20 +32,20 @@ public class LoginMutation: GraphQLMutation {
     /// Login
     ///
     /// Parent Type: `User`
-    public struct Login: BookARocket.SelectionSet {
+    public struct Login: BookARocketAPI.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { BookARocket.Objects.User }
+      public static var __parentType: any ApolloAPI.ParentType { BookARocketAPI.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("email", String.self),
-        .field("id", BookARocket.ID.self),
+        .field("id", BookARocketAPI.ID.self),
         .field("token", String?.self),
       ] }
 
       public var email: String { __data["email"] }
-      public var id: BookARocket.ID { __data["id"] }
+      public var id: BookARocketAPI.ID { __data["id"] }
       public var token: String? { __data["token"] }
     }
   }

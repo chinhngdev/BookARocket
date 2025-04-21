@@ -18,11 +18,11 @@ public class BookTripsMutation: GraphQLMutation {
 
   public var __variables: Variables? { ["launchIds": launchIds] }
 
-  public struct Data: BookARocket.SelectionSet {
+  public struct Data: BookARocketAPI.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { BookARocket.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { BookARocketAPI.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("bookTrips", BookTrips.self, arguments: ["launchIds": .variable("launchIds")]),
     ] }
@@ -32,11 +32,11 @@ public class BookTripsMutation: GraphQLMutation {
     /// BookTrips
     ///
     /// Parent Type: `TripUpdateResponse`
-    public struct BookTrips: BookARocket.SelectionSet {
+    public struct BookTrips: BookARocketAPI.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { BookARocket.Objects.TripUpdateResponse }
+      public static var __parentType: any ApolloAPI.ParentType { BookARocketAPI.Objects.TripUpdateResponse }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("success", Bool.self),
@@ -51,18 +51,18 @@ public class BookTripsMutation: GraphQLMutation {
       /// BookTrips.Launch
       ///
       /// Parent Type: `Launch`
-      public struct Launch: BookARocket.SelectionSet {
+      public struct Launch: BookARocketAPI.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { BookARocket.Objects.Launch }
+        public static var __parentType: any ApolloAPI.ParentType { BookARocketAPI.Objects.Launch }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", BookARocket.ID.self),
+          .field("id", BookARocketAPI.ID.self),
           .field("isBooked", Bool.self),
         ] }
 
-        public var id: BookARocket.ID { __data["id"] }
+        public var id: BookARocketAPI.ID { __data["id"] }
         public var isBooked: Bool { __data["isBooked"] }
       }
     }

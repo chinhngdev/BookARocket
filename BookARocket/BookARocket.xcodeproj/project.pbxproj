@@ -10,6 +10,7 @@
 		34C54D792DB6A4B500261447 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54D782DB6A4B500261447 /* Apollo */; };
 		34C54D7B2DB6A4B500261447 /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54D7A2DB6A4B500261447 /* ApolloSQLite */; };
 		34C54D7D2DB6A4B500261447 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54D7C2DB6A4B500261447 /* ApolloWebSocket */; };
+		34C54DD02DB70A4500261447 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54DCF2DB70A4500261447 /* Algorithms */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +32,9 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		34C54D6B2DB6A0A000261447 /* BookARocket */ = {
+		34C54D6B2DB6A0A000261447 /* App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BookARocket;
+			path = App;
 			sourceTree = "<group>";
 		};
 		34C54D7E2DB6A4C100261447 /* GraphQL */ = {
@@ -44,6 +45,11 @@
 			path = GraphQL;
 			sourceTree = "<group>";
 		};
+		34C54DD42DB70BEE00261447 /* Assets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C54DD02DB70A4500261447 /* Algorithms in Frameworks */,
 				34C54D792DB6A4B500261447 /* Apollo in Frameworks */,
 				34C54D7D2DB6A4B500261447 /* ApolloWebSocket in Frameworks */,
 				34C54D7B2DB6A4B500261447 /* ApolloSQLite in Frameworks */,
@@ -63,8 +70,9 @@
 		34C54D602DB6A0A000261447 = {
 			isa = PBXGroup;
 			children = (
+				34C54DD42DB70BEE00261447 /* Assets */,
 				34C54D7E2DB6A4C100261447 /* GraphQL */,
-				34C54D6B2DB6A0A000261447 /* BookARocket */,
+				34C54D6B2DB6A0A000261447 /* App */,
 				34C54D6A2DB6A0A000261447 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,14 +101,16 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				34C54D6B2DB6A0A000261447 /* BookARocket */,
+				34C54D6B2DB6A0A000261447 /* App */,
 				34C54D7E2DB6A4C100261447 /* GraphQL */,
+				34C54DD42DB70BEE00261447 /* Assets */,
 			);
 			name = BookARocket;
 			packageProductDependencies = (
 				34C54D782DB6A4B500261447 /* Apollo */,
 				34C54D7A2DB6A4B500261447 /* ApolloSQLite */,
 				34C54D7C2DB6A4B500261447 /* ApolloWebSocket */,
+				34C54DCF2DB70A4500261447 /* Algorithms */,
 			);
 			productName = BookARocket;
 			productReference = 34C54D692DB6A0A000261447 /* BookARocket.app */;
@@ -132,6 +142,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				34C54D772DB6A4B500261447 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				34C54DCE2DB70A4500261447 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 34C54D6A2DB6A0A000261447 /* Products */;
@@ -383,6 +394,14 @@
 				minimumVersion = 1.20.0;
 			};
 		};
+		34C54DCE2DB70A4500261447 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -400,6 +419,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 34C54D772DB6A4B500261447 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloWebSocket;
+		};
+		34C54DCF2DB70A4500261447 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34C54DCE2DB70A4500261447 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

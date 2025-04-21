@@ -1,5 +1,5 @@
 {
-  "schemaNamespace" : "BookARocket",
+  "schemaNamespace" : "BookARocketAPI",
   "input" : {
     "operationSearchPaths" : [
       "**/*.graphql"
@@ -14,7 +14,7 @@
       }
     },
     "schemaTypes" : {
-      "path" : "./BookARocket",
+      "path" : "./BookARocketAPI",
       "moduleType" : {
         "swiftPackageManager" : {
         }
@@ -38,6 +38,6 @@
     },
     "downloadTimeout": 60,
     "headers": [],
-    "outputPath": "./BookARocket/GraphQL/schema.graphqls"
+    "outputPath": "./graphql/schema.graphqls"
   }
 }

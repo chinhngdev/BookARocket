@@ -33,17 +33,17 @@ Now that we have updated our config, we can download the schema by running the f
 ```
 After running this command you should see a graphql folder in your project directory containing a `schema.graphqls` file.
 
+4. Add your needed operations to the project.
+- Before adding, please ensure that you have tested the operations through Apollo's Sandbox Explorer.
 
-
-
-Continue from here
-
-
-
-- Generate code
+5. After adding, run the following command for code generation:
 ```bash
 ./apollo-ios-cli generate
 ```
+
+------------------
+CONTINUE FROM HERE
+
 
 In our project:
 - Operation file (Operation models): `SpaceX-Company.graphql`

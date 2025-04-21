@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "BookARocket",
+  name: "BookARocketAPI",
   platforms: [
     .iOS(.v12),
     .macOS(.v10_14),
@@ -11,14 +11,14 @@ let package = Package(
     .watchOS(.v5),
   ],
   products: [
-    .library(name: "BookARocket", targets: ["BookARocket"]),
+    .library(name: "BookARocketAPI", targets: ["BookARocketAPI"]),
   ],
   dependencies: [
     .package(url: "https://github.com/apollographql/apollo-ios", exact: "1.20.0"),
   ],
   targets: [
     .target(
-      name: "BookARocket",
+      name: "BookARocketAPI",
       dependencies: [
         .product(name: "ApolloAPI", package: "apollo-ios"),
       ],

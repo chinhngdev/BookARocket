@@ -18,11 +18,11 @@ public class LaunchDetailQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["launchId": launchId] }
 
-  public struct Data: BookARocket.SelectionSet {
+  public struct Data: BookARocketAPI.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { BookARocket.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { BookARocketAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("launch", Launch?.self, arguments: ["id": .variable("launchId")]),
     ] }
@@ -32,21 +32,21 @@ public class LaunchDetailQuery: GraphQLQuery {
     /// Launch
     ///
     /// Parent Type: `Launch`
-    public struct Launch: BookARocket.SelectionSet {
+    public struct Launch: BookARocketAPI.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { BookARocket.Objects.Launch }
+      public static var __parentType: any ApolloAPI.ParentType { BookARocketAPI.Objects.Launch }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", BookARocket.ID.self),
+        .field("id", BookARocketAPI.ID.self),
         .field("isBooked", Bool.self),
         .field("mission", Mission?.self),
         .field("rocket", Rocket?.self),
         .field("site", String?.self),
       ] }
 
-      public var id: BookARocket.ID { __data["id"] }
+      public var id: BookARocketAPI.ID { __data["id"] }
       public var isBooked: Bool { __data["isBooked"] }
       public var mission: Mission? { __data["mission"] }
       public var rocket: Rocket? { __data["rocket"] }
@@ -55,11 +55,11 @@ public class LaunchDetailQuery: GraphQLQuery {
       /// Launch.Mission
       ///
       /// Parent Type: `Mission`
-      public struct Mission: BookARocket.SelectionSet {
+      public struct Mission: BookARocketAPI.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { BookARocket.Objects.Mission }
+        public static var __parentType: any ApolloAPI.ParentType { BookARocketAPI.Objects.Mission }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("name", String?.self),
@@ -73,19 +73,19 @@ public class LaunchDetailQuery: GraphQLQuery {
       /// Launch.Rocket
       ///
       /// Parent Type: `Rocket`
-      public struct Rocket: BookARocket.SelectionSet {
+      public struct Rocket: BookARocketAPI.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { BookARocket.Objects.Rocket }
+        public static var __parentType: any ApolloAPI.ParentType { BookARocketAPI.Objects.Rocket }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", BookARocket.ID.self),
+          .field("id", BookARocketAPI.ID.self),
           .field("name", String?.self),
           .field("type", String?.self),
         ] }
 
-        public var id: BookARocket.ID { __data["id"] }
+        public var id: BookARocketAPI.ID { __data["id"] }
         public var name: String? { __data["name"] }
         public var type: String? { __data["type"] }
       }
