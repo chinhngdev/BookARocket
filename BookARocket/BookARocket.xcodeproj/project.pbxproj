@@ -16,6 +16,20 @@
 		34C54D692DB6A0A000261447 /* BookARocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookARocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		34C54D9F2DB6AD0B00261447 /* Exceptions for "GraphQL" folder in "BookARocket" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Operations/Mutations/BookTrips.graphql,
+				Operations/Mutations/Login.graphql,
+				Operations/Queries/LaunchDetail.graphql,
+				Operations/Queries/LaunchHistories.graphql,
+				Operations/Subscriptions/TripsUpdated.graphql,
+			);
+			target = 34C54D682DB6A0A000261447 /* BookARocket */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		34C54D6B2DB6A0A000261447 /* BookARocket */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -24,6 +38,9 @@
 		};
 		34C54D7E2DB6A4C100261447 /* GraphQL */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				34C54D9F2DB6AD0B00261447 /* Exceptions for "GraphQL" folder in "BookARocket" target */,
+			);
 			path = GraphQL;
 			sourceTree = "<group>";
 		};
