@@ -11,6 +11,7 @@
 		34C54D7B2DB6A4B500261447 /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54D7A2DB6A4B500261447 /* ApolloSQLite */; };
 		34C54D7D2DB6A4B500261447 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54D7C2DB6A4B500261447 /* ApolloWebSocket */; };
 		34C54DD02DB70A4500261447 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54DCF2DB70A4500261447 /* Algorithms */; };
+		34C54E1F2DB7113C00261447 /* BookARocketAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54E1E2DB7113C00261447 /* BookARocketAPI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 			files = (
 				34C54DD02DB70A4500261447 /* Algorithms in Frameworks */,
 				34C54D792DB6A4B500261447 /* Apollo in Frameworks */,
+				34C54E1F2DB7113C00261447 /* BookARocketAPI in Frameworks */,
 				34C54D7D2DB6A4B500261447 /* ApolloWebSocket in Frameworks */,
 				34C54D7B2DB6A4B500261447 /* ApolloSQLite in Frameworks */,
 			);
@@ -111,6 +113,7 @@
 				34C54D7A2DB6A4B500261447 /* ApolloSQLite */,
 				34C54D7C2DB6A4B500261447 /* ApolloWebSocket */,
 				34C54DCF2DB70A4500261447 /* Algorithms */,
+				34C54E1E2DB7113C00261447 /* BookARocketAPI */,
 			);
 			productName = BookARocket;
 			productReference = 34C54D692DB6A0A000261447 /* BookARocket.app */;
@@ -143,6 +146,7 @@
 			packageReferences = (
 				34C54D772DB6A4B500261447 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				34C54DCE2DB70A4500261447 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				34C54E1D2DB7113C00261447 /* XCLocalSwiftPackageReference "GraphQL/BookARocketAPI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 34C54D6A2DB6A0A000261447 /* Products */;
@@ -385,6 +389,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		34C54E1D2DB7113C00261447 /* XCLocalSwiftPackageReference "GraphQL/BookARocketAPI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = GraphQL/BookARocketAPI;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		34C54D772DB6A4B500261447 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -424,6 +435,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 34C54DCE2DB70A4500261447 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
+		};
+		34C54E1E2DB7113C00261447 /* BookARocketAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BookARocketAPI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
