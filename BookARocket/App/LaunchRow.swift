@@ -1,6 +1,8 @@
 import SwiftUI
+import BookARocketAPI
 
 struct LaunchRow: View {
+    let launch: LaunchHistoriesQuery.Data.Launches.Launch // highlight-line
     private let placeholderImg = Image("placeholder")
     
     var body: some View {
@@ -12,7 +14,7 @@ struct LaunchRow: View {
             
             VStack(alignment: .leading) {
                 Text("Mission Name")
-                Text("Launch Site")
+                Text(launch.site ?? "Launch Site")
                     .font(.system(size: 14))
             }
             Spacer()

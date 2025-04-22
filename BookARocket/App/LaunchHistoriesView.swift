@@ -7,11 +7,12 @@ struct LaunchHistoriesView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(0..<10) { index in
-                    LaunchRow()
+                ForEach(0..<viewModel.launches.count, id: \.self) { index in
+                    LaunchRow(launch: viewModel.launches[index])
                 }
             }
             .task {
+                viewModel.loadMoreLaunches()
             }
             .navigationTitle("Rocket Launches")
             .appAlert($viewModel.appAlert)
