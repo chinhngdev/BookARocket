@@ -22,11 +22,11 @@
 		34C54D9F2DB6AD0B00261447 /* Exceptions for "GraphQL" folder in "BookARocket" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Operations/Mutations/BookTrips.graphql,
-				Operations/Mutations/Login.graphql,
-				Operations/Queries/LaunchDetail.graphql,
-				Operations/Queries/LaunchHistories.graphql,
-				Operations/Subscriptions/TripsUpdated.graphql,
+				operations/Mutations/BookTrips.graphql,
+				operations/Mutations/Login.graphql,
+				operations/Queries/LaunchDetail.graphql,
+				operations/Queries/LaunchHistories.graphql,
+				operations/Subscriptions/TripsUpdated.graphql,
 			);
 			target = 34C54D682DB6A0A000261447 /* BookARocket */;
 		};

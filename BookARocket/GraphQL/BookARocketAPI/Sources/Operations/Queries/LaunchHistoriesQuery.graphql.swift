@@ -7,16 +7,10 @@ public class LaunchHistoriesQuery: GraphQLQuery {
   public static let operationName: String = "LaunchHistories"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query LaunchHistories($pageSize: Int) { launches(pageSize: $pageSize) { __typename cursor hasMore launches { __typename id site mission { __typename name missionPatch } rocket { __typename id name type } } } }"#
+      #"query LaunchHistories { launches { __typename cursor hasMore launches { __typename id site mission { __typename name missionPatch } rocket { __typename id name type } } } }"#
     ))
 
-  public var pageSize: GraphQLNullable<Int>
-
-  public init(pageSize: GraphQLNullable<Int>) {
-    self.pageSize = pageSize
-  }
-
-  public var __variables: Variables? { ["pageSize": pageSize] }
+  public init() {}
 
   public struct Data: BookARocketAPI.SelectionSet {
     public let __data: DataDict
@@ -24,7 +18,7 @@ public class LaunchHistoriesQuery: GraphQLQuery {
 
     public static var __parentType: any ApolloAPI.ParentType { BookARocketAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
-      .field("launches", Launches.self, arguments: ["pageSize": .variable("pageSize")]),
+      .field("launches", Launches.self),
     ] }
 
     public var launches: Launches { __data["launches"] }

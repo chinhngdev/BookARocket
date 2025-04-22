@@ -1,5 +1,5 @@
-query LaunchHistories($pageSize: Int) {
-  launches(pageSize: $pageSize) {
+query LaunchHistories {
+  launches {
     cursor
     hasMore
     launches {

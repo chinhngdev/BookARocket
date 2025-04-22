@@ -11,7 +11,7 @@ import SwiftUI
 struct BookARocketApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LaunchHistoriesView()
         }
     }
 }

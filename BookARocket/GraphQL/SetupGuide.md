@@ -14,7 +14,7 @@ We need to update our apollo-codegen-config.json to include a `schemeDownloadCon
 "schemaDownloadConfiguration": {
     "downloadMethod": {
         "introspection": {
-            "endpointURL": "https://spacex-production.up.railway.app/",
+            "endpointURL": "https://apollo-fullstack-tutorial.herokuapp.com/graphql",     // Enter your endpoint here.
             "httpMethod": {
                 "POST": {}
             },
