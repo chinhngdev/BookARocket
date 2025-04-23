@@ -1,19 +1,29 @@
 import SwiftUI
+import SDWebImageSwiftUI
 import BookARocketAPI
 
 struct LaunchRow: View {
-    let launch: LaunchHistoriesQuery.Data.Launches.Launch // highlight-line
+    let launch: LaunchHistoriesQuery.Data.Launches.Launch
     private let placeholderImg = Image("placeholder")
     
     var body: some View {
         HStack {
-            placeholderImg
-                .resizable()
-                .scaledToFit()
-                .frame(width: 50, height: 50)
+            if let missionPatch = launch.mission?.missionPatch {
+                WebImage(url: URL(string: missionPatch))
+                    .resizable()
+                    .placeholder(placeholderImg)
+                    .indicator(.activity)
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+            } else {
+                placeholderImg
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+            }
             
             VStack(alignment: .leading) {
-                Text("Mission Name")
+                Text(launch.mission?.name ?? "Mission Name") // highlight-line
                 Text(launch.site ?? "Launch Site")
                     .font(.system(size: 14))
             }

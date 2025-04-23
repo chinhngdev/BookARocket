@@ -7,7 +7,7 @@ query LaunchHistories {
       site
       mission {
         name
-        missionPatch
+        missionPatch(size: SMALL)
       }
       rocket {
         id
