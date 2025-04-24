@@ -1,5 +1,6 @@
 import SwiftUI
 import BookARocketAPI
+import KeychainSwift
 
 class DetailViewModel: ObservableObject {
     
@@ -54,7 +55,8 @@ class DetailViewModel: ObservableObject {
     }
     
     private func isLoggedIn() -> Bool {
-        return false
+        let keychain = KeychainSwift()
+        return keychain.get(LoginView.loginKeychainKey) != nil
     }
     
 }

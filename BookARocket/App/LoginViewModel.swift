@@ -1,4 +1,7 @@
 import SwiftUI
+import Apollo
+import BookARocketAPI
+import KeychainSwift
 
 class LoginViewModel: ObservableObject {
     
@@ -25,6 +28,28 @@ class LoginViewModel: ObservableObject {
             errorText = "Please enter a valid email"
             isSubmitEnabled = true
             return
+        }
+        
+//        Network.shared.apollo.perform(mutation: LoginMutation(email: GraphQLNullable(stringLiteral: email))) { [weak self] result in
+        Network.shared.apollo.perform(mutation: LoginMutation(email: email)) { [weak self] result in
+            defer {
+                self?.isSubmitEnabled = true
+            }
+
+            switch result {
+            case .success(let graphQLResult):
+                if let token = graphQLResult.data?.login?.token {
+                    let keychain = KeychainSwift()
+                    keychain.set(token, forKey: LoginView.loginKeychainKey)
+                    self?.isPresented = false
+                }
+
+                if let errors = graphQLResult.errors {
+                    self?.appAlert = .errors(errors: errors)
+                }
+            case .failure(let error):
+                self?.appAlert = .errors(errors: [error])
+            }
         }
     }
     

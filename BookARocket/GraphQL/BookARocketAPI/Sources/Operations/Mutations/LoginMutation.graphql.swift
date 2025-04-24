@@ -7,12 +7,12 @@ public class LoginMutation: GraphQLMutation {
   public static let operationName: String = "Login"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"mutation Login($email: String) { login(email: $email) { __typename email id token } }"#
+      #"mutation Login($email: String!) { login(email: $email) { __typename email id token } }"#
     ))
 
-  public var email: GraphQLNullable<String>
+  public var email: String
 
-  public init(email: GraphQLNullable<String>) {
+  public init(email: String) {
     self.email = email
   }
 

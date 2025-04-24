@@ -23,7 +23,7 @@ struct LaunchRow: View {
             }
             
             VStack(alignment: .leading) {
-                Text(launch.mission?.name ?? "Mission Name") // highlight-line
+                Text(launch.mission?.name ?? "Mission Name")
                 Text(launch.site ?? "Launch Site")
                     .font(.system(size: 14))
             }

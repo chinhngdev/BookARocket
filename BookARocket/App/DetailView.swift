@@ -13,34 +13,34 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            if let launch = viewModel.launch { // highlight-line
+            if let launch = viewModel.launch {
                 HStack(spacing: 10) {
-                    if let missionPatch = launch.mission?.missionPatch { // highlight-line
-                        WebImage(url: URL(string: missionPatch)) // highlight-line
-                            .resizable() // highlight-line
-                            .placeholder(placeholderImg) // highlight-line
-                            .indicator(.activity) // highlight-line
-                            .scaledToFit() // highlight-line
-                            .frame(width: 165, height: 165) // highlight-line
-                    } else { // highlight-line
+                    if let missionPatch = launch.mission?.missionPatch {
+                        WebImage(url: URL(string: missionPatch))
+                            .resizable()
+                            .placeholder(placeholderImg)
+                            .indicator(.activity)
+                            .scaledToFit()
+                            .frame(width: 165, height: 165)
+                    } else {
                         placeholderImg
                             .resizable()
                             .scaledToFit()
                             .frame(width: 165, height: 165)
-                    } // highlight-line
+                    }
 
                     VStack(alignment: .leading, spacing: 4) {
-                        if let missionName = launch.mission?.name { // highlight-line
+                        if let missionName = launch.mission?.name {
                             Text(missionName)
                                 .font(.system(size: 24, weight: .bold))
                         }
 
-                        if let rocketName = launch.rocket?.name { // highlight-line
+                        if let rocketName = launch.rocket?.name {
                             Text("🚀 \(rocketName)")
                                 .font(.system(size: 18))
                         }
 
-                        if let launchSite = launch.site { // highlight-line
+                        if let launchSite = launch.site {
                             Text(launchSite)
                                 .font(.system(size: 14))
                         }
@@ -49,7 +49,7 @@ struct DetailView: View {
                     Spacer()
                 }
 
-                if launch.isBooked { // highlight-line
+                if launch.isBooked {
                     cancelTripButton()
                 } else {
                     bookTripButton()
@@ -58,10 +58,10 @@ struct DetailView: View {
             Spacer()
         }
         .padding(10)
-        .navigationTitle(viewModel.launch?.mission?.name ?? "") // highlight-line
+        .navigationTitle(viewModel.launch?.mission?.name ?? "")
         .navigationBarTitleDisplayMode(.inline)
         .task {
-            viewModel.loadLaunchDetails() // highlight-line
+            viewModel.loadLaunchDetails()
         }
         .sheet(isPresented: $viewModel.isShowingLogin) {
             LoginView(isPresented: $viewModel.isShowingLogin)

@@ -51,7 +51,7 @@ class LaunchHistoriesViewModel: ObservableObject {
         self.loadMoreLaunches(from: connection.cursor)
     }
     
-    private func loadMoreLaunches(from cursor: String?) { // highlight-line
+    private func loadMoreLaunches(from cursor: String?) {
         self.activeRequest = Network.shared.apollo.fetch(query: LaunchHistoriesQuery(cursor: cursor ?? .null)) { [weak self] result in
             guard let self = self else {
                 return
