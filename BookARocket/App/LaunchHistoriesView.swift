@@ -8,7 +8,9 @@ struct LaunchHistoriesView: View {
         NavigationStack {
             List {
                 ForEach(0..<viewModel.launches.count, id: \.self) { index in
-                    LaunchRow(launch: viewModel.launches[index])
+                    NavigationLink(destination: DetailView(launchID: viewModel.launches[index].id)) { // highlight-line
+                        LaunchRow(launch: viewModel.launches[index]) // highlight-line
+                    } // highlight-line
                 }
                 if viewModel.mostRecentLaunchConnection?.hasMore != false {
                         if viewModel.activeRequest == nil {

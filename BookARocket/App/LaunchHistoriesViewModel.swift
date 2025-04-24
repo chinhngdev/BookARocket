@@ -49,7 +49,6 @@ class LaunchHistoriesViewModel: ObservableObject {
         }
 
         self.loadMoreLaunches(from: connection.cursor)
-        // TODO: Đọc để hiểu đoạn code vừa thêm. Sau khi hoàn thành, hãy tiếp tục từ Section 9 trong Apollo
     }
     
     private func loadMoreLaunches(from cursor: String?) { // highlight-line

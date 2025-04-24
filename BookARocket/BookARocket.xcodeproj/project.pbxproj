@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		340847A82DB938A6001168F3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 340847A72DB938A6001168F3 /* SDWebImageSwiftUI */; };
 		340847AB2DB93C18001168F3 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 340847AA2DB93C18001168F3 /* KeychainSwift */; };
+		340847AE2DBA9710001168F3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 340847AD2DBA9710001168F3 /* SDWebImageSwiftUI */; };
 		34C54D792DB6A4B500261447 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54D782DB6A4B500261447 /* Apollo */; };
 		34C54D7B2DB6A4B500261447 /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54D7A2DB6A4B500261447 /* ApolloSQLite */; };
 		34C54D7D2DB6A4B500261447 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54D7C2DB6A4B500261447 /* ApolloWebSocket */; };
-		34C54DD02DB70A4500261447 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54DCF2DB70A4500261447 /* Algorithms */; };
 		34C54E1F2DB7113C00261447 /* BookARocketAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 34C54E1E2DB7113C00261447 /* BookARocketAPI */; };
 /* End PBXBuildFile section */
 
@@ -60,8 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				340847A82DB938A6001168F3 /* SDWebImageSwiftUI in Frameworks */,
-				34C54DD02DB70A4500261447 /* Algorithms in Frameworks */,
+				340847AE2DBA9710001168F3 /* SDWebImageSwiftUI in Frameworks */,
 				34C54D792DB6A4B500261447 /* Apollo in Frameworks */,
 				340847AB2DB93C18001168F3 /* KeychainSwift in Frameworks */,
 				34C54E1F2DB7113C00261447 /* BookARocketAPI in Frameworks */,
@@ -116,10 +114,9 @@
 				34C54D782DB6A4B500261447 /* Apollo */,
 				34C54D7A2DB6A4B500261447 /* ApolloSQLite */,
 				34C54D7C2DB6A4B500261447 /* ApolloWebSocket */,
-				34C54DCF2DB70A4500261447 /* Algorithms */,
 				34C54E1E2DB7113C00261447 /* BookARocketAPI */,
-				340847A72DB938A6001168F3 /* SDWebImageSwiftUI */,
 				340847AA2DB93C18001168F3 /* KeychainSwift */,
+				340847AD2DBA9710001168F3 /* SDWebImageSwiftUI */,
 			);
 			productName = BookARocket;
 			productReference = 34C54D692DB6A0A000261447 /* BookARocket.app */;
@@ -151,10 +148,9 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				34C54D772DB6A4B500261447 /* XCRemoteSwiftPackageReference "apollo-ios" */,
-				34C54DCE2DB70A4500261447 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				34C54E1D2DB7113C00261447 /* XCLocalSwiftPackageReference "GraphQL/BookARocketAPI" */,
-				340847A62DB938A6001168F3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				340847A92DB93C18001168F3 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				340847AC2DBA9710001168F3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 34C54D6A2DB6A0A000261447 /* Products */;
@@ -405,20 +401,20 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		340847A62DB938A6001168F3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 2.2.0;
-			};
-		};
 		340847A92DB93C18001168F3 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
 			requirement = {
 				kind = exactVersion;
 				version = 18.0.0;
+			};
+		};
+		340847AC2DBA9710001168F3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.2.0;
 			};
 		};
 		34C54D772DB6A4B500261447 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
@@ -429,26 +425,18 @@
 				minimumVersion = 1.20.0;
 			};
 		};
-		34C54DCE2DB70A4500261447 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-algorithms.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		340847A72DB938A6001168F3 /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 340847A62DB938A6001168F3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
 		340847AA2DB93C18001168F3 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 340847A92DB93C18001168F3 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		340847AD2DBA9710001168F3 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 340847AC2DBA9710001168F3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 		34C54D782DB6A4B500261447 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -464,11 +452,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 34C54D772DB6A4B500261447 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloWebSocket;
-		};
-		34C54DCF2DB70A4500261447 /* Algorithms */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 34C54DCE2DB70A4500261447 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
-			productName = Algorithms;
 		};
 		34C54E1E2DB7113C00261447 /* BookARocketAPI */ = {
 			isa = XCSwiftPackageProductDependency;
