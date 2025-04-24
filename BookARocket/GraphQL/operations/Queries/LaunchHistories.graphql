@@ -1,5 +1,5 @@
-query LaunchHistories {
-  launches {
+query LaunchHistories($cursor: String) {
+  launches(after: $cursor) {
     cursor
     hasMore
     launches {

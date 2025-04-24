@@ -1,9 +1,12 @@
 import SwiftUI
+import Apollo
 import BookARocketAPI
 
 class LaunchHistoriesViewModel: ObservableObject {
     
     @Published var launches = [LaunchHistoriesQuery.Data.Launches.Launch]()
+    @Published var mostRecentLaunchConnection: LaunchHistoriesQuery.Data.Launches?
+    @Published var activeRequest: Cancellable?
     @Published var appAlert: AppAlert?
     @Published var notificationMessage: String?
     
@@ -36,17 +39,31 @@ class LaunchHistoriesViewModel: ObservableObject {
     // MARK: - Launch Loading
     
     func loadMoreLaunchesIfTheyExist() {
+        guard let connection = self.mostRecentLaunchConnection else {
+            self.loadMoreLaunches(from: nil)
+            return
+        }
+
+        guard connection.hasMore else {
+            return
+        }
+
+        self.loadMoreLaunches(from: connection.cursor)
+        // TODO: Đọc để hiểu đoạn code vừa thêm. Sau khi hoàn thành, hãy tiếp tục từ Section 9 trong Apollo
     }
     
-    func loadMoreLaunches() {
-        Network.shared.apollo.fetch(query: LaunchHistoriesQuery()) { [weak self] result in
+    private func loadMoreLaunches(from cursor: String?) { // highlight-line
+        self.activeRequest = Network.shared.apollo.fetch(query: LaunchHistoriesQuery(cursor: cursor ?? .null)) { [weak self] result in
             guard let self = self else {
                 return
             }
 
+            self.activeRequest = nil
+
             switch result {
             case .success(let graphQLResult):
                 if let launchConnection = graphQLResult.data?.launches {
+                    self.mostRecentLaunchConnection = launchConnection
                     self.launches.append(contentsOf: launchConnection.launches.compactMap({ $0 }))
                 }
 
