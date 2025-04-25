@@ -15,5 +15,7 @@ https://www.apollographql.com/docs/ios/testing/test-mocks
 ## Docs
 https://graphql.org/learn/
 
-
-
+## Knowledge
+https://www.apollographql.com/docs/ios/fetching/fragments
+https://www.apollographql.com/docs/ios/custom-scalars
+https://www.apollographql.com/docs/ios/caching/introduction
