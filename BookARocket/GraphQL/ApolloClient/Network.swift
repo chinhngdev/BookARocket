@@ -7,6 +7,7 @@
 
 import Foundation
 import Apollo
+import ApolloWebSocket
 
 final class Network {
     
@@ -19,8 +20,20 @@ final class Network {
         let provider = NetworkInterceptorProvider(client: client, store: store)
         let url = URL(string: "https://apollo-fullstack-tutorial.herokuapp.com/graphql")!
         let transport = RequestChainNetworkTransport(interceptorProvider: provider, endpointURL: url)
+        
+        let webSocket = WebSocket(
+            url: URL(string: "wss://apollo-fullstack-tutorial.herokuapp.com/graphql")!,
+            protocol: .graphql_ws
+        )
+        
+        let webSocketTransport = WebSocketTransport(websocket: webSocket)
 
-        return ApolloClient(networkTransport: transport, store: store)
+        let splitTransport = SplitNetworkTransport(
+            uploadingNetworkTransport: transport,
+            webSocketNetworkTransport: webSocketTransport
+        )
+
+        return ApolloClient(networkTransport: splitTransport, store: store)
     }()
     
 }
